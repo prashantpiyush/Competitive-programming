@@ -67,7 +67,7 @@ public class Strassen{
             fill(A, first, 0, 0);
             fill(B, second, 0, 0);
             
-            // now multiply these new square matrices and the extract the ans from them
+            // now multiply these new square matrices and extract the ans from them
             int[][] R = multiply(A, B);
             int[][] out = new int[r1][c2];
             
@@ -139,15 +139,15 @@ public class Strassen{
         // Seven special matrices required for the strassen's algorithm
         // which are a combination of the above 8 matrices.
         int [][] P1 = multiply(A, sub(F, H));
-		int [][] P2 = multiply(add(A, B), H);
-		int [][] P3 = multiply(add(C, D), E);
-		int [][] P4 = multiply(D, sub(G, E));
-		int [][] P5 = multiply(add(A, D), add(E, H));
-		int [][] P6 = multiply(sub(B, D), add(G, H));
+        int [][] P2 = multiply(add(A, B), H);
+        int [][] P3 = multiply(add(C, D), E);
+        int [][] P4 = multiply(D, sub(G, E));
+        int [][] P5 = multiply(add(A, D), add(E, H));
+        int [][] P6 = multiply(sub(B, D), add(G, H));
         int [][] P7 = multiply(sub(A, C), add(E, F));
 
-        // Joing the seven strassen's matrices to form a complete
-        // matrix which is product of the given matriecs
+        // Joing the seven strassen's matrices to form part of final
+        // output matrix
         int[][] one = sub(add(add(P5, P4), P6), P2);
         int[][] two = add(P1, P2);
         int[][] three = add(P3, P4);
