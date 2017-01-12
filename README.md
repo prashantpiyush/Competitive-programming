@@ -1,4 +1,4 @@
-# Problems
+# Competitive Programming
 A list of **Competitive Programming** resources.
 
 This repository is aimed to provide reference for competitive programmers.
