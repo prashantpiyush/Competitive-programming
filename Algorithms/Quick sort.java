@@ -36,7 +36,9 @@ class Quicksort {
             j++;
         }
         
+        // Finaly place the pivot at its right postion
         swap(array, low, i-1);
+        // Now solve the subarrays
         quicksort(array, low, i-2);
         quicksort(array, i, high);
     }
