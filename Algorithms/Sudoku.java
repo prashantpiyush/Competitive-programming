@@ -13,14 +13,14 @@ import java.util.*;
 */
 
 public class Sudoku {
+    
+    /**
+    * This method prints a 9x9 sudoku which is a
+    * 2D matrix.
+    * 
+    * @param sudoku 2D matrix in which sudoku is stored
+    */
     static void print(int[][] sudoku) {
-        /**
-        * This method prints a 9x9 sudoku which is a
-        * 2D matrix.
-        * douA 2D matrix in which sudoku is stored
-        * @return void This method returns nothing
-        *
-        */
         System.out.println();
         System.out.println("+-------+-------+-------+");
         
@@ -46,20 +46,20 @@ public class Sudoku {
             System.out.println();
     }
     
+    /**
+    * This method canPut checks if we can place a number i
+    * at postion (x,y) in matrix sudoku.
+    *
+    * @param x Row of matrix sudoku where i is to be placed
+    * @param y Column of matrix sudoku where i is to placed
+    * @param i The number to be checked if it can be placed 
+    *          or not
+    * @param sudoku Sudoku matrix
+    * @return This method returns true if i can be placed and
+    *         and false otherwise.
+    *
+    */
     static boolean canPut(int x, int y, int i, int[][] sudoku) {
-        /**
-        * This method canPut checks if we can place a number i
-        * at postion (x,y) in matrix sudoku.
-        *
-        * @param x Row of matrix sudoku where i is to be placed
-        * @param y Column of matrix sudoku where i is to placed
-        * @param i The number to be checked if it can be placed 
-        *          or not
-        * @param sudoku Sudoku matrix
-        * @return This method returns true if i can be placed and
-        *         and false otherwise.
-        *
-        */
         int a= (x/3)*3;
         int b= (y/3)*3;
         // Check for diagonals
@@ -84,23 +84,22 @@ public class Sudoku {
         return true;
     }
     
-    
+    /**
+    * This method makes use backtracking to solve the sudoku.
+    * First this method puts a number in a cell of sudoku matrix
+    * and then solves furthur, if anything goes wrong it retraces
+    * its way back here and put something else and then solves again.
+    *
+    * @param x Row of the cell where this method is going to put a
+    *          number
+    * @param y Column of the cell where this method is going to put a
+    *          number
+    * @param sudoku The matrix sudoku which is being solved here
+    * @return boolean This method returns true if the sudoku can be
+    *          solved and false otherwise
+    *
+    */
     static boolean solve(int x, int y, int[][] sudoku) {
-        /**
-        * This method makes use backtracking to solve the sudoku.
-        * First this method puts a number in a cell of sudoku matrix
-        * and then solves furthur, if anything goes wrong it retraces
-        * its way back here and put something else and then solves again.
-        *
-        * @param x Row of the cell where this method is going to put a
-        *          number
-        * @param y Column of the cell where this method is going to put a
-        *          number
-        * @param sudoku The matrix sudoku which is being solved here
-        * @return boolean This method returns true if the sudoku can be
-        *          solved and false otherwise
-        *
-        */
         // Move from first cell to last one, if nothing goes wrong in
         // between then you have solved the sudoku.
         if(y==9) {
@@ -131,18 +130,16 @@ public class Sudoku {
         return false;
     }
     
-    
-    public static void main(String[] args) {
-        /**
-        * This is the main method which takes the sudoku input as a 2D
-        * matrix and then calss solve method to find its solution and 
-        * then prints it.
-        *
-        * @param args Command line argument arrays
-        * @return void This method returns nothing
-        *
-        */
-        
+    /**
+    * This is the main method which takes the sudoku input as a 2D
+    * matrix and then calss solve method to find its solution and 
+    * then prints it.
+    *
+    * @param args Command line argument arrays
+    * @return void This method returns nothing
+    *
+    */
+    public static void main(String[] args) {        
         Scanner scan = new Scanner(System.in);
         // Input numbers in sudoku matrix and
         // input zero where nothing is filled in sudoku
@@ -174,22 +171,4 @@ public class Sudoku {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
