@@ -1,4 +1,5 @@
 /**
+* <h1>Quick Sort</h1>
 * This is a sorting program which uses quick sort algorithm
 * to sort an array of integers.
 *
@@ -9,18 +10,18 @@ import java.util.*;
 
 class Quicksort {
     
+    /**
+    * First pick a element, pivot. Then reorder the elements
+    * with all the elements less than pivot on one side and
+    * those greater than pivot on other side of pivot.
+    * Recursively call these subarrays till the whole array is
+    * sorted.
+    * 
+    * @param array
+    * @param low The lowest index of the subarray
+    * @param high Max index of subarray
+    */
     static void quicksort(int[] array, int low, int high) {
-        /**
-        * First pick a element, pivot. Then reorder the elements
-        * with all the elements less than pivot on one side and
-        * those greater than pivot on other side of pivot.
-        * Recursively call these subarrays till the whole array is
-        * sorted.
-        * 
-        * @param array
-        * @param low The lowest index of the subarray
-        * @param high Max index of subarray
-        */
         if(low>=high)
             return;
         
@@ -43,23 +44,28 @@ class Quicksort {
         quicksort(array, i, high);
     }
     
+    /**
+    * This method swaps two elements at postion i and j of
+    * array.
+    *
+    * @param array
+    * @param i 
+    * @param j
+    */
     static void swap(int[] array, int i, int j) {
-        /**
-        * This method swaps two elements at postion i and j of
-        * array.
-        */
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
     
+    /** 
+    * This is main method. It inputs unsorted array of
+    * integers and sorts it.
+    *
+    * @param args
+    * @throws IOException
+    */
     public static void main(String[] args) throws IOException{
-        /** 
-        * This is main method. It inputs unsorted array of
-        * integers and sorts it.
-        *
-        * @throws IOException
-        */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
         // Input as string array
