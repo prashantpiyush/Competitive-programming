@@ -35,7 +35,7 @@ class DynamicArray {
                 
             } else if(a==2) {
                 // Query 2 : get the y%Size-th element from the specified sequence
-                int s = list.get((x^lastAns)%n).size();     //git size
+                int s = list.get((x^lastAns)%n).size();     //get size
                 
                 lastAns = list.get((x^lastAns)%n).get(y%s); // get element
                 System.out.println(lastAns);
