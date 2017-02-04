@@ -6,8 +6,8 @@
 class BFS {
 
     public static void main(String[] args) throws IOException {        
-        
-        int n = 1234;       // number of nodes in graph
+        // Number of nodes in graph
+        int n = 1234;       // '1234' is some arbit number just for example
         
         // ArrayList for maintaing adj list of graph
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
