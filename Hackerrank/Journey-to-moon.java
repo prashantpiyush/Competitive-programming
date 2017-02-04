@@ -3,6 +3,7 @@
 * https://www.hackerrank.com/challenges/journey-to-the-moon
 * 
 * Journey to the moon
+* I have solved this problem using ArrayList and HashMap
 */
 
 import java.io.*;
